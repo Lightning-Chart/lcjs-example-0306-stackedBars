@@ -9,7 +9,7 @@ const { lightningChart, BarChartSorting, LegendBoxBuilders, Themes } = lcjs
 
 const barChart = lightningChart()
     .BarChart({
-        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,,
+        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
     })
     .setTitle('% of market share by mobile OS in 1999-2021')
     .setValueLabels(undefined)
