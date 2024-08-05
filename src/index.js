@@ -2,7 +2,7 @@
  * LightningChart JS Example that showcases Stacked Bars Chart.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
 const { lightningChart, BarChartSorting, LegendBoxBuilders, Themes } = lcjs
@@ -15,10 +15,6 @@ const barChart = lightningChart({
     })
     .setTitle('% of market share by mobile OS in 1999-2021')
     .setValueLabels(undefined)
-    .setCursorResultTableFormatter((builder, category, value, bar) => {
-        builder.addRow('OS:', bar.subCategory).addRow('Share:', String(value), '%')
-        return builder
-    })
 
 barChart.setDataStacked(
     ['1999', '2004', '2009', '2014', '2019', '2021'],
@@ -33,7 +29,7 @@ barChart.setDataStacked(
     ],
 )
 
-barChart.valueAxis.setTitle('% of market share')
+barChart.valueAxis.setTitle('Market share').setUnits('%')
 
 // Add LegendBox.
 const legend = barChart
