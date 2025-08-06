@@ -5,7 +5,7 @@
 const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
-const { lightningChart, BarChartSorting, LegendBoxBuilders, Themes } = lcjs
+const { lightningChart, BarChartSorting, Themes } = lcjs
 
 const barChart = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
@@ -30,13 +30,3 @@ barChart.setDataStacked(
 )
 
 barChart.valueAxis.setTitle('Market share').setUnits('%')
-
-// Add LegendBox.
-const legend = barChart
-    .addLegendBox(LegendBoxBuilders.VerticalLegendBox)
-
-    .setAutoDispose({
-        type: 'max-width',
-        maxWidth: 0.3,
-    })
-legend.add(barChart)
