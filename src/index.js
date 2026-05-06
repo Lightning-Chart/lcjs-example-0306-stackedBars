@@ -20,6 +20,7 @@ textRenderer: window.lcjsSmallView ? lcjs.htmlTextRenderer : undefined,
     })
     .setTitle('% of market share by mobile OS in 1999-2021')
     .setValueLabels(undefined)
+    .setCornerRadius(3)
 
 barChart.setDataStacked(
     ['1999', '2004', '2009', '2014', '2019', '2021'],
